@@ -5,6 +5,5 @@ export const fetchExperience = async() =>  {
 
     const data = await res.json()
     const experiences = data.experiences;
-
     return experiences
 }

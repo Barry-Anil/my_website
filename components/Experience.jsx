@@ -25,10 +25,12 @@ function Experience({experiences}) {
       <div className="w-fulll flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {/* ExperienceCard */}
         {
-          experiences?.map(experience => (
+          experiences?.map((experience) => {
+            console.log(experience, "exp")
+            return (
 
             <ExperienceCard experience={experience}  key={experience._id}/>
-          ))
+          )})
         }
        
       </div>

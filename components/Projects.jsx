@@ -23,7 +23,9 @@ function Projects({ projects }) {
         </h3>
         <div className="realtive w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
           {/* prjects */}
-          {projects?.map((project, i) => (
+          {projects?.map((project, i) => {
+            console.log(project, "asdas")
+          return (
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
               <motion.img
                 initial={{
@@ -49,14 +51,11 @@ function Projects({ projects }) {
                   {project.title}
                 </h4>
                 <p className="text-lg text-center md:text-left">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus, placeat tenetur obcaecati, eveniet expedita fuga
-                  ullam tempora distinctio labore ducimus, a consequuntur optio
-                  sequi repellat atque doloribus laboriosam ex perferendis.
+                 {project?.summary}
                 </p>
               </div>
             </div>
-          ))}
+)})}
         </div>
         <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
       </motion.div>

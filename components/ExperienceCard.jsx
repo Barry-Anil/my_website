@@ -5,6 +5,7 @@ import { urlFor } from '@/sanity';
 
 
 function ExperienceCard({experience}) {
+    console.log(experience, "experience")
   return (
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[600px] w-[500px] md:w-[600px] xl:w-[800px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
         <div>
@@ -23,16 +24,17 @@ function ExperienceCard({experience}) {
 </div>
         <div className='px-8 md:px-10'>
             <h4 className='text-4xl font-light'>XX XX XX</h4>
-            <p className='font-bold text-2xl mt-1'> XAXA XAXA </p>
+            <p className='font-bold text-2xl mt-1'>{experience?.jobTitle} </p>
             <div className='flex space-x-2 my-2'>
                 {/* Tech used */}
                 {
-                    experience?.technologies?.map(technology => (
+                    experience?.technologies?.map((technology) => (
 
-                        <img 
+                        <img
+                            key={technology?._id} 
                             className='h-10 w-10 rounded-full'
                             alt=''
-                            src=''
+                            // src={urlFor(technology.image).url()}
                         />
                     ))
                 }
