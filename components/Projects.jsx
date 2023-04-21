@@ -26,7 +26,7 @@ function Projects({ projects }) {
           {projects?.map((project, i) => {
             console.log(project, "asdas")
           return (
-            <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+            <div key={project._id || i} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
               <motion.img
                 initial={{
                   y: -300,
